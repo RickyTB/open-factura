@@ -1,6 +1,5 @@
-import * as forge from "node-forge";
 import { readFileSync } from "fs";
-import fetch from "node-fetch";
+import * as forge from "node-forge";
 
 export function getP12FromLocalFile(path: string) {
   const file = readFileSync(path);
