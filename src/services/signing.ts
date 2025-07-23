@@ -209,7 +209,7 @@ export async function signXml(
 
   signedProperties += "<etsi:SignedDataObjectProperties>";
   signedProperties +=
-    '<etsi:DataObjectFormat ObjectReference="#Reference-ID=' +
+    '<etsi:DataObjectFormat ObjectReference="#Reference-ID-' +
     referenceIdNumber +
     '">';
   signedProperties += "<etsi:Description>";
@@ -293,7 +293,7 @@ export async function signXml(
     '" URI="#comprobante">';
   signedInfo += "\n<ds:Transforms>";
   signedInfo +=
-    '\n<ds:Transform Algorithm="http://www.w3.org/2000/09/xmlndsig#enveloped-signature">';
+    '\n<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">';
   signedInfo += "</ds:Transform>";
   signedInfo += "\n</ds:Transforms>";
   signedInfo +=
