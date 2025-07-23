@@ -19,6 +19,7 @@ async function documentAuthorization(accesKey, authorizationUrl) {
 }
 
 // src/services/generateInvoice.ts
+import { parse } from "date-fns";
 import { create } from "xmlbuilder2";
 
 // src/utils/utils.ts
@@ -71,7 +72,7 @@ function generateInvoiceXml(invoice) {
 }
 function generateInvoice(invoiceData) {
   const accessKey = generateAccessKey({
-    date: new Date(invoiceData.infoFactura.fechaEmision),
+    date: parse(invoiceData.infoFactura.fechaEmision, "yyyy-MM-dd", /* @__PURE__ */ new Date()),
     codDoc: invoiceData.infoTributaria.codDoc,
     ruc: invoiceData.infoTributaria.ruc,
     environment: invoiceData.infoTributaria.ambiente,
