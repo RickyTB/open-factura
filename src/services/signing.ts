@@ -288,7 +288,7 @@ export async function signXml(
   signedInfo += "\n</ds:Reference>";
 
   signedInfo +=
-    '\n<ds:Reference Id="Reference-ID' +
+    '\n<ds:Reference Id="Reference-ID-' +
     referenceIdNumber +
     '" URI="#comprobante">';
   signedInfo += "\n<ds:Transforms>";

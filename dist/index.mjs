@@ -329,7 +329,7 @@ async function signXml(p12Data, p12Password, xmlData) {
   signedInfo += sha1KeyInfo;
   signedInfo += "</ds:DigestValue>";
   signedInfo += "\n</ds:Reference>";
-  signedInfo += '\n<ds:Reference Id="Reference-ID' + referenceIdNumber + '" URI="#comprobante">';
+  signedInfo += '\n<ds:Reference Id="Reference-ID-' + referenceIdNumber + '" URI="#comprobante">';
   signedInfo += "\n<ds:Transforms>";
   signedInfo += '\n<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">';
   signedInfo += "</ds:Transform>";
