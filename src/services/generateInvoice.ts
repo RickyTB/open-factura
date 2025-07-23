@@ -1,4 +1,3 @@
-import { parse } from "date-fns";
 import { create } from "xmlbuilder2";
 import { Invoice, InvoiceInput } from "../baseData/invoice/invoice";
 import { generateAccessKey } from "../utils/utils";
@@ -11,7 +10,7 @@ export function generateInvoiceXml(invoice: Invoice) {
 
 export function generateInvoice(invoiceData: InvoiceInput) {
   const accessKey = generateAccessKey({
-    date: parse(invoiceData.infoFactura.fechaEmision, "yyyy-MM-dd", new Date()),
+    date: invoiceData.infoFactura.fechaEmision,
     codDoc: invoiceData.infoTributaria.codDoc,
     ruc: invoiceData.infoTributaria.ruc,
     environment: invoiceData.infoTributaria.ambiente,

@@ -1,5 +1,5 @@
 export type GenerateAccessKey = {
-  date: Date;
+  date: string;
   /*
   FACTURA 01
   LIQUIDACIÓN DE COMPRA DE
@@ -33,16 +33,8 @@ export function generateAccessKey(accessKeyData: GenerateAccessKey) {
   return accessKey;
 }
 
-function formatDateToDDMMYYYY(date: Date) {
-  let day = date.getDate();
-  let month = date.getMonth() + 1; // getMonth() returns 0-11
-  let year = date.getFullYear();
-
-  // Pad day and month with a leading zero if they are less than 10
-  const finalDay = day < 10 ? "0" + day : day;
-  const finalMonth = month < 10 ? "0" + month : month;
-
-  return `${finalDay}${finalMonth}${year}`;
+function formatDateToDDMMYYYY(date: string) {
+  return date.replaceAll("/", "");
 }
 
 function generateRandomEightDigitNumber(): number {

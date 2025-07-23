@@ -19,7 +19,6 @@ async function documentAuthorization(accesKey, authorizationUrl) {
 }
 
 // src/services/generateInvoice.ts
-import { parse } from "date-fns";
 import { create } from "xmlbuilder2";
 
 // src/utils/utils.ts
@@ -38,12 +37,7 @@ function generateAccessKey(accessKeyData) {
   return accessKey;
 }
 function formatDateToDDMMYYYY(date) {
-  let day = date.getDate();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
-  const finalDay = day < 10 ? "0" + day : day;
-  const finalMonth = month < 10 ? "0" + month : month;
-  return `${finalDay}${finalMonth}${year}`;
+  return date.replaceAll("/", "");
 }
 function generateRandomEightDigitNumber() {
   const min = 1e7;
@@ -72,7 +66,7 @@ function generateInvoiceXml(invoice) {
 }
 function generateInvoice(invoiceData) {
   const accessKey = generateAccessKey({
-    date: parse(invoiceData.infoFactura.fechaEmision, "yyyy-MM-dd", /* @__PURE__ */ new Date()),
+    date: invoiceData.infoFactura.fechaEmision,
     codDoc: invoiceData.infoTributaria.codDoc,
     ruc: invoiceData.infoTributaria.ruc,
     environment: invoiceData.infoTributaria.ambiente,
