@@ -103,7 +103,7 @@ export async function signXml(
     .map((attribute) => {
       return `${attribute.shortName}=${attribute.value}`;
     })
-    .join(", ");
+    .join(",");
 
   if (/BANCO CENTRAL/i.test(friendlyName)) {
     let keys = pkcs8Bags[(forge as any).oids.pkcs8ShroudedKeyBag];
