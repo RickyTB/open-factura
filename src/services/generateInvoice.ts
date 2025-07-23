@@ -3,7 +3,7 @@ import { Invoice, InvoiceInput } from "../baseData/invoice/invoice";
 import { generateAccessKey } from "../utils/utils";
 
 export function generateInvoiceXml(invoice: Invoice) {
-  const document = create(invoice);
+  const document = create({ version: "1.0", encoding: "UTF-8" }, invoice);
   const xml = document.end({ prettyPrint: true });
   return xml;
 }

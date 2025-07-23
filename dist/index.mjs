@@ -60,7 +60,7 @@ function generateVerificatorDigit(accessKey) {
 
 // src/services/generateInvoice.ts
 function generateInvoiceXml(invoice) {
-  const document = create(invoice);
+  const document = create({ version: "1.0", encoding: "UTF-8" }, invoice);
   const xml = document.end({ prettyPrint: true });
   return xml;
 }
