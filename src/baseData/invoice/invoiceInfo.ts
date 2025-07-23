@@ -64,7 +64,7 @@ export type TotalWithTax = {
 
   ICE - Ver tabla 18 de la ficha tecnica de comprobantes electronicos
   */
-  codigoPorcentaje: "0" | "2" | "3" | "6" | "7" | "8";
+  codigoPorcentaje: "0" | "2" | "3" | "4" | "6" | "7" | "8";
   descuentoAdicional: string;
   baseImponible: string;
   tarifa?: string;
